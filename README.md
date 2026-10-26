@@ -38,7 +38,7 @@ Chaque IA a son point faible. Le projet fonctionne parce que **chacune vérifie 
 ## Le chemin complet
 
 ```mermaid
-flowchart LR
+flowchart TB
     V["Vidéo du défilé"] --> A["1. Comprendre la marche<br/>Claude mesure"]
     A --> P["2. Premier essai<br/>Codex, pantin articulé"]
     P -->|"pas assez beau"| F["3. Vidéo Flow<br/>l'Héroïne marche"]

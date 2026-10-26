@@ -7,7 +7,7 @@ Tu n'as pas besoin d'un défilé de mode pour réutiliser cette méthode. Elle m
 ## La boucle de base
 
 ```mermaid
-flowchart LR
+flowchart TB
     I["1. Idée claire<br/>+ règles"] --> D["2. Découper<br/>en étapes"]
     D --> R["3. Choisir l'outil<br/>de chaque étape"]
     R --> B["4. Écrire<br/>un brief"]
