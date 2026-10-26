@@ -18,18 +18,17 @@ L'idée de la DA : **faire défiler un personnage d'anime, l'Héroïne, avec cet
 
 ## Les règles qu'on s'est fixées
 
-### 1. On ne publie pas ce qui ne nous appartient pas
+### 1. Les sources de travail et ce qu'on publie
 
-La vidéo du défilé, les photos du décor, le personnage d'origine et la marque ont des propriétaires. Pour travailler, on a le droit de les **étudier** chez soi. Mais pour publier ce dépôt sur Internet, on a :
-- remplacé les vrais noms par des **noms de code** (la Maison, l'Héroïne, la robe à aplats) ;
-- flouté le **monogramme** de la Maison ;
-- gardé uniquement des **images fabriquées par les IA** et des **schémas**.
+On a utilisé des références privées pour étudier le mouvement et le décor : la vidéo du défilé, des photos du décor et des chaussures, et l'image d'origine du personnage. Elles ne sont pas diffusées dans ce dépôt. Les noms du projet sont remplacés par des **noms de code** (la Maison, l'Héroïne, la robe à aplats), et le **monogramme** de la Maison est masqué.
 
-> **Pour ton projet :** si tu pars d'une vidéo, d'une photo ou d'un personnage que tu n'as pas créés, demande-toi dès le début ce que tu pourras montrer à la fin. C'est beaucoup plus simple de le prévoir que de tout nettoyer après.
+Ces précautions limitent ce qu'on expose ; elles ne constituent pas, à elles seules, une autorisation de publier une adaptation. Une image générée par IA peut encore reprendre des éléments d'une œuvre protégée : ici, la robe et le personnage. Les droits sur les sources et les droits sur les résultats sont deux questions à examiner séparément.
 
-### 2. On ne montre jamais la vraie mannequin
+> **Pour ton projet :** pars de créations originales, ou de sources dont les conditions d'utilisation conviennent à ton usage. Vérifie aussi les autorisations nécessaires pour les personnes, les œuvres et les sons visibles ou audibles avant de publier. Pose-toi la question dès le début : c'est beaucoup plus simple de le prévoir que de tout nettoyer après. Pour en savoir plus : [le droit à l'image sur Service-Public](https://www.service-public.gouv.fr/particuliers/vosdroits/F32103) et [l'article L122-4 du Code de la propriété intellectuelle](https://www.legifrance.gouv.fr/codes/article_lc/LEGIARTI000006278911/), qui encadre les reproductions et les adaptations.
 
-C'est une vraie personne, qui n'a rien demandé. Elle sert seulement de **modèle de mouvement**. On a même dû **masquer son visage** pour que Google Flow accepte de travailler (chapitre 5).
+### 2. On ne publie aucune image de la vraie mannequin
+
+C'est une vraie personne, qui n'a rien demandé. Elle sert seulement de **modèle de mouvement**. Certaines étapes de travail ont utilisé des images d'elle (chapitres 3 à 5), mais aucune n'est publiée ici. Son visage a aussi été masqué dans la vidéo envoyée à Google Flow, après un refus (chapitre 5).
 
 ### 3. L'humain décide, les IA proposent
 

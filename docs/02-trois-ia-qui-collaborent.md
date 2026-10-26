@@ -4,11 +4,13 @@
 
 ## Pourquoi trois IA et pas une seule ?
 
-Parce qu'aucune ne sait tout faire :
+Parce qu'aucune ne fait tout bien. Dans ce projet, chacune avait un rôle précis :
 
 - **Google Flow** génère des **vidéos** très fluides, mais on ne contrôle pas chaque image.
-- **Codex** (avec son outil d'images **GPT Image**) dessine de **très belles images fixes**, mais une seule à la fois.
-- **Claude** ne dessine pas. En revanche, il sait **analyser** une vidéo, **mesurer** avec des programmes, **écrire des consignes précises** et **vérifier** le travail des autres.
+- **Codex** organise la fabrication : il écrit et lance des programmes, et utilise **GPT Image** pour produire les images fixes, une génération par dessin.
+- **Claude** ne fabriquait pas les images du projet. Il **analysait** les vidéos, **mesurait** avec des programmes, **écrivait les consignes** et **vérifiait** le travail des autres.
+
+Ces rôles sont ceux de notre organisation, pas des limites universelles des outils.
 
 Comme dans une vraie équipe, chacun a son métier :
 
@@ -56,7 +58,7 @@ Trois détails comptent beaucoup.
 ## Comment les IA se passaient le travail, concrètement
 
 - **Claude et Codex partagent un dossier** sur l'ordinateur. Claude y dépose les briefs et les fichiers d'entrée ; Codex y dépose ses résultats.
-- **Claude écrivait dans la fenêtre de Codex** grâce à un outil qui lui permet de piloter les applications de l'ordinateur. La DA pouvait aussi copier-coller les messages elle-même.
+- **Claude écrivait dans la fenêtre de Codex** grâce à un outil qui lui permet de piloter les applications de l'ordinateur. La DA pouvait aussi copier-coller les messages.
 - **Claude pilotait Google Flow** dans le navigateur de la DA, connecté à son compte. Il demandait l'accord de la DA avant chaque génération, puisque chaque vidéo coûte des crédits.
 - **Claude surveillait le dossier** de Codex en arrière-plan et reprenait la main dès qu'une livraison apparaissait.
 
@@ -69,7 +71,7 @@ Claude a fait plusieurs erreurs dans ses consignes pendant le projet. On les rac
 - il a décrit des chaussures « semelle visible » alors qu'on voyait le dessus (chapitre 4) ;
 - il a demandé un sol qui défile « vers le bas » alors qu'il remonte (chapitre 7) ;
 - il a demandé une « coulisse noire », que Codex a transformée en porte (chapitre 7) ;
-- il a placé un genou trop à droite sur une image (chapitre 3).
+- il a mal placé un genou sur une image (chapitre 3).
 
 Chaque fois, l'erreur a été repérée soit par la DA, qui regarde le résultat, soit par Codex, qui a posé une question. **C'est pour ça que chaque étape passe par plusieurs regards.**
 

@@ -6,19 +6,25 @@
 
 **Alpha (transparence)** : une information ajoutée à chaque pixel, qui dit s'il est opaque, transparent ou entre les deux. Elle permet de poser l'Héroïne sur n'importe quel décor.
 
+**Amplitude** : l'importance maximale d'un mouvement autour de sa position de repos. Par exemple, l'ourlet qui s'incline jusqu'à 30° d'un côté puis de l'autre.
+
 **Brief** : le document de consignes donné à une IA (ou à une personne) avant un travail. Ici, des fichiers `BRIEF_*.md`.
 
+**Cadrage** : la portion de la scène visible dans l'image. Garder le même cadrage, c'est conserver les marges et la taille du sujet dans le cadre.
+
 **Calage** : faire en sorte que deux éléments bougent ensemble. Ici, le sol est calé sur le pied d'appui pour que le pied ne glisse pas.
+
+**Compenser le mouvement de caméra** : recaler deux images pour comparer ce qui change vraiment dans la scène, sans confondre ce changement avec le déplacement dû à la caméra.
 
 **Crédits** : la « monnaie » de certains outils d'IA. Chaque génération en consomme.
 
 **Cycle de marche (foulée)** : deux pas consécutifs. Après un cycle, le mouvement recommence.
 
-**Décalage (du décor)** : ici, déplacer tout le décor de 360 pixels vers la droite pour que le monogramme soit visible à côté de l'Héroïne.
+**Décalage (du décor)** : ici, déplacer tout le décor vers la droite (360 pixels dans l'export 1 080 × 1 920) pour que le monogramme soit visible à côté de l'Héroïne.
 
 **Despill** : retirer la couleur du fond vert qui a « déteint » sur les bords d'un personnage incrusté.
 
-**Dessins par seconde / images par seconde (i/s)** : combien d'images différentes défilent en une seconde. La vidéo du défilé en a 25 ; l'animation finale a 12 dessins différents par seconde, chacun montré deux fois (24 images par seconde).
+**Dessins par seconde** : le nombre de dessins différents utilisés par seconde. L'animation finale en a 12, chacun montré deux fois dans une vidéo à 24 images par seconde.
 
 **ffmpeg** : un logiciel gratuit en ligne de commande pour découper, convertir, accélérer et assembler des vidéos.
 
@@ -28,13 +34,17 @@
 
 **Guide au trait** : un schéma simplifié (contours, squelette, repères) qui indique la pose à l'IA de dessin sans lui montrer la photo d'origine.
 
+**Images par seconde (i/s)** : le nombre d'images affichées chaque seconde par une vidéo ; certaines peuvent être identiques. La vidéo du défilé en a 25 ; la vidéo finale en a 24.
+
+**JSON** : un fichier texte qui range des données, par exemple les coordonnées des articulations et l'angle de la robe pour chaque dessin.
+
 **Kirigami** : art japonais du papier découpé et plié.
 
 **Liseré** : une fine bordure de couleur indésirable autour d'un objet découpé.
 
 **MediaPipe** : un outil gratuit de Google qui repère automatiquement le squelette d'une personne (épaules, coudes, hanches, genoux…) sur une image.
 
-**Monogramme** : un logo fait de lettres entrelacées. Celui de la Maison est flouté dans ce dépôt.
+**Monogramme** : un logo fait de lettres entrelacées. Celui de la Maison est masqué par un cache gris dans ce dépôt.
 
 **Noms de code (pseudonymes)** : des noms inventés qui remplacent les vrais noms de marques ou de personnages dans un document public.
 
@@ -54,9 +64,17 @@
 
 **Scintillement** : quand un élément qui devrait rester fixe change légèrement d'une image à l'autre, ce qui fait trembler l'animation.
 
-**Seuil** : la valeur limite d'un contrôle. Par exemple, « l'ourlet doit être à moins de 5° de la référence ».
+**Seuil** : la valeur limite d'un contrôle (voir aussi « tolérance »). Par exemple, « l'ourlet doit être à moins de 5° de la référence ».
 
 **Squelette** : les points des articulations d'une personne (épaules, coudes, poignets, hanches, genoux, chevilles), reliés par des traits.
+
+**Synchroniser** : faire correspondre les images qui représentent le même instant, grâce à leur numéro ou à leur temps.
+
+**Texture** : les petits détails d'une surface, comme le grain du papier. On peut animer séparément la forme d'un objet et sa texture.
+
+**Tolérance** : l'écart maximal qu'on décide d'accepter pour une mesure ; voir aussi « seuil ».
+
+**Transition** : le passage d'un dessin au suivant. 87 dessins donnent 86 transitions.
 
 **Travelling arrière** : un mouvement de caméra qui recule. Ici, la caméra recule pendant que l'Héroïne avance.
 

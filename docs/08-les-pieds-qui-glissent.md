@@ -12,7 +12,7 @@ Deux choses bougent indépendamment l'une de l'autre :
 - **l'Héroïne**, collée exactement à la position de ses dessins Flow ;
 - **le sol**, qui défile selon le mouvement de caméra que Codex avait calculé à partir de l'**arche**.
 
-Or la vidéo Flow n'est pas une vraie scène filmée : ses pieds et son décor ne sont pas parfaitement cohérents entre eux. Résultat : sous le pied posé, le papier du sol avançait **environ 6 pixels par dessin** de trop ou de pas assez.
+Or la vidéo Flow n'est pas une vraie scène filmée : ses pieds et son décor ne sont pas parfaitement cohérents entre eux. Résultat : sous le pied posé, le papier du sol avançait en moyenne **5,5 pixels par dessin** (jusqu'à 12) de trop ou de pas assez, dans le rendu de travail 1 080 × 1 920.
 
 ## Deux options
 
@@ -22,8 +22,8 @@ Contrainte : **ne pas toucher à l'Héroïne**, dont les 87 dessins étaient val
 flowchart TD
     P["Le pied glisse sur le sol"] --> A["Option A<br/>caler le sol sur le pied d'appui"]
     P --> B["Option B<br/>recalculer toute la caméra<br/>à partir des pieds"]
-    A --> A1["Simple et rapide<br/>l'arche ne bouge pas"]
-    B --> B1["Plus cohérent<br/>mais l'arche change de rythme<br/>et le logo peut toucher l'Héroïne"]
+    A --> A1["Correction du sol seulement<br/>le fond garde son mouvement"]
+    B --> B1["Autre hypothèse<br/>caméra à recalculer<br/>non testée"]
     A1 --> C["Choix de la DA : option A"]
 ```
 
@@ -42,7 +42,7 @@ Le glissement que la DA voyait était un glissement **avant / arrière**. Aucune
 - **de côté** : une courbe lisse sur toute la séquence, sans aller-retour ;
 - **passage du talon à la pointe** : transition douce sur 2 à 3 dessins, au lieu de suivre le point le plus bas à la lettre.
 
-Résultat : glissement toujours sous 1 pixel, et plus d'embardée.
+Résultat sur l'essai de 14 dessins : glissement avant / arrière toujours sous 1 pixel, pas de côté du sol sous 1 pixel, et plus d'embardée.
 
 ![Zoom sur les pieds : production, essai 1, essai 2](../images/pieds_calage_zoom.jpg)
 
@@ -58,21 +58,20 @@ Le contrôle automatique de Codex ne le voyait pas : il ne cherchait que du vert
 
 ## Sur les 87 images : un compromis à trancher
 
-En appliquant la méthode aux 87 dessins, Codex a rencontré un **conflit**. Pour certains pas, garder le glissement avant / arrière sous 1 pixel **obligeait** le bord du sol à bouger de plus d'1 pixel de côté. Il l'a démontré par le calcul et a posé la question : quelle règle privilégier ?
-
-Claude a conseillé de **privilégier l'avant / arrière**, puisque c'est le défaut que la DA voyait, et la DA a suivi ce conseil.
+En appliquant la méthode aux 87 dessins, Codex a rencontré un **conflit**. Pour certains pas, garder le glissement avant / arrière sous 1 pixel **obligeait** le bord du sol à bouger de plus d'1 pixel de côté. Il l'a démontré par le calcul, puis a proposé trois options en recommandant de **privilégier l'avant / arrière**. La DA a demandé son avis à Claude, qui a conseillé la même option, puisque c'est le défaut que la DA voyait. La DA a choisi cette option, en gardant une courbe de côté lissée et en faisant chiffrer ses dépassements.
 
 ![Glissement avant et après](../images/graphique_glissement.png)
 
-**Résultat :**
-- glissement du pied d'appui : de **5,5 px** en moyenne (12,1 au pire) à **moins de 0,6 px**, sur les 34 moments où le pied est bien posé ;
-- en contrepartie, le bord du sol fait parfois de petits pas de côté, jusqu'à 4,8 pixels, loin des pieds ;
-- le grain du sol glisse un peu par rapport au pied du mur, comme un tapis roulant. Sur ce papier uni, c'est presque invisible.
+**Résultat**, en pixels du rendu de travail 1 080 × 1 920 (la vidéo publiée ici est réduite à 540 × 960) :
+- sur 34 **transitions** (passages d'un dessin au suivant) où le pied d'appui est bien posé et visible, le glissement avant / arrière passe de **5,51 px** à **0,032 px** en moyenne, et de 12,12 à 0,377 px au maximum. Une vérification sur le grain du sol réellement rendu donne une borne de 0,547 px, sous le seuil de 1 px ;
+- ce résultat ne certifie pas tout : 15 dessins n'ont pas de point de contact mesurable, et 25 sont des passages talon / pointe traités en douceur. Le glissement **de côté** des pieds n'est pas calé ;
+- en contrepartie, la courbe de côté du sol, bien que lissée, bouge encore de plus d'1 pixel sur 51 transitions sur 86, jusqu'à 4,84 px au bord du sol, avec quelques changements de sens. Les à-coups près des pieds augmentent un peu (de 15,3 à 16,8 px par dessin²) ;
+- le grain du sol se décale aussi par rapport au pied du mur, comme un tapis roulant : à la dernière image, +5,30 px horizontalement et +18,12 px verticalement au centre. C'est une limite du résultat.
 
 > **Leçon :** **on ne peut pas toujours tout avoir.** Quand deux objectifs s'opposent, il faut choisir lequel compte le plus pour le résultat, et l'écrire. Ici, la règle était : « ce que l'œil remarque passe en premier ».
 
 ## Fin de l'aventure
 
-La DA a validé cette version. C'est la vidéo en tête du [README](../README.md).
+Après la validation de l'essai court et ce choix de priorité, Codex a livré les 87 dessins avec ces limites documentées. La DA a regardé la séquence complète et l'a validée : « Je valide la séquence finale calée. » C'est la vidéo en tête du [README](../README.md).
 
 [Chapitre suivant : à toi de jouer, la méthode →](09-ta-methode.md)

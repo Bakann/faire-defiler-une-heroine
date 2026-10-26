@@ -2,7 +2,7 @@
 
 [← Chapitre précédent](06-heroine-en-kirigami.md) · [Sommaire](../README.md) · [Chapitre suivant →](08-les-pieds-qui-glissent.md)
 
-C'est l'étape qui a demandé le plus de versions : cinq en tout. Chaque problème est raconté ici avec sa solution.
+C'est l'étape qui a demandé le plus de versions : cinq en tout. Chaque problème est raconté ici avec sa solution. Ils sont regroupés par thème, pas tout à fait dans l'ordre où ils sont arrivés. Dans l'ordre réel : décor redessiné image par image, puis plaque unique (versions 1 à 3, avec la porte, la forme du bloc et le liseré crème), aperçus sans boucle, et enfin sol élargi (version 4).
 
 ## Le point de départ : une vidéo de décor vide
 
@@ -20,7 +20,7 @@ Première idée : faire redessiner chaque image du décor en kirigami par GPT Im
 
 ![Deux images consécutives du décor redessiné](../images/decor_scintillement.jpg)
 
-Codex a **mesuré** ce scintillement : de combien l'arche change d'une image à l'autre, une fois le mouvement de la caméra compensé.
+Codex a **mesuré** ce scintillement : l'écart moyen de luminosité de la zone de l'arche entre deux images voisines, une fois le mouvement de la caméra [compensé](10-glossaire.md). La mesure porte sur l'essai de 14 images, soit 13 transitions.
 
 ![Mesure du scintillement](../images/graphique_scintillement.png)
 
@@ -28,17 +28,17 @@ Le décor redessiné changeait **5,6 fois plus** que la vidéo Flow d'origine.
 
 **Pourquoi :** chaque génération est indépendante. L'IA ne se souvient pas de la position exacte de chaque fleur dans l'image précédente.
 
-**Solution (proposée par Codex) :** ne dessiner le décor **qu'une seule fois**, sous forme d'une grande **plaque** en haute définition, puis la **déplacer et la réduire** image par image pour imiter le recul de la caméra. Les fleurs sont toujours les mêmes, il n'y a donc plus de scintillement : **1 %**, encore moins que la vidéo Flow.
+**Solution (proposée par Codex) :** ne dessiner le décor **qu'une seule fois**, sous forme d'une grande **plaque** en haute définition, puis la **déplacer et la réduire** image par image pour imiter le recul de la caméra. Les fleurs ne sont plus régénérées, et l'écart mesuré tombe à **1,01 %**, encore moins que la vidéo Flow. Il n'est pas nul : de petites différences de rendu subsistent. (Le sol, lui, est une seconde plaque, animée en perspective.)
 
-> **Leçon :** **ce qui ne bouge pas ne doit pas être regénéré.** Une IA de génération recrée tout à chaque fois. Pour un élément fixe, il vaut mieux le fabriquer une fois et l'animer avec un programme.
+> **Leçon :** **un élément fixe dans la scène n'a pas besoin d'être régénéré à chaque dessin.** Une IA de génération recrée tout à chaque fois. On peut fabriquer l'élément une fois, sous forme de plaque, puis animer sa position et sa taille avec un programme.
 
 ## Problème 2 : le logo caché derrière l'Héroïne
 
 Le monogramme de la Maison est au centre de l'arche… exactement derrière l'Héroïne, qui en cachait 70 à 85 %. Or sur la vidéo du défilé, on le voyait bien à côté de la mannequin.
 
-**Solution :** décaler **tout le décor** de 360 pixels vers la droite, sans bouger l'Héroïne. Le monogramme passe alors à sa droite. Codex vérifie sur chaque image qu'il n'est **jamais caché**, avec au moins 43 pixels de marge.
+**Solution :** décaler **tout le décor** vers la droite, sans bouger l'Héroïne : 360 pixels dans l'export 1 080 × 1 920, soit 240 pixels dans les images de travail 720 × 1 280. Le monogramme passe alors à sa droite. Codex vérifie sur chaque image qu'il n'est **jamais caché** : la marge minimale mesurée est de 43 pixels dans l'export, pour un seuil fixé à 22,5.
 
-![Logo caché, puis visible](../images/logo_decale.jpg)
+![Logo caché, puis visible (masqué ici par un cache gris)](../images/logo_decale.jpg)
 
 ## Problème 3 : une porte sortie de nulle part
 
@@ -46,7 +46,7 @@ En décalant le décor, il fallait inventer la partie gauche, qui n'existait pas
 
 **Solution :** Claude a reconnu son erreur, corrigé le brief (« un simple prolongement du mur, sans porte ni ouverture ») et Codex a retiré la porte.
 
-> **Leçon :** **chaque mot d'une consigne compte.** Une IA de génération transforme chaque mot en quelque chose de visible. Si tu ne veux pas d'un objet, ne le nomme pas, même en passant.
+> **Leçon :** **chaque mot d'une consigne compte.** Décris d'abord ce qui doit être visible, par exemple « un mur blanc continu jusqu'au sol ». Une interdiction ciblée (« sans porte ni ouverture ») peut compléter la consigne, mais seul un essai vérifié montre si elle a été comprise.
 
 ## Problème 4 : un décor qui ne ressemble pas au vrai
 
@@ -66,7 +66,7 @@ En comparant, Claude a vu que l'image montrée était un **brouillon** (B) que C
 
 En regardant de près, deux défauts restaient :
 
-**Un liseré crème autour des fleurs.** Les fleurs avaient été découpées dans l'ancienne version, au fond crème, et en gardaient un contour, comme un autocollant sur le mur blanc. Codex l'a remplacé par le papier du mur. Il est passé de 4 891 pixels crème à **0**.
+**Un liseré crème autour des fleurs.** Les fleurs avaient été découpées dans l'ancienne version, au fond crème, et en gardaient un contour, comme un autocollant sur le mur blanc. Codex l'a remplacé par le papier du mur. Dans une bande de 12 pixels autour du contour extérieur de l'arche, le nombre de pixels crème est passé de 6 480 à **0**. Les fleurs, les feuilles et l'ouverture éclairée étaient exclues de ce comptage.
 
 ![Liseré crème avant / après](../images/lisere_creme.jpg)
 

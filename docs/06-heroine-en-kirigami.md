@@ -11,9 +11,9 @@ Pour transformer l'Héroïne en kirigami, Codex utilise **GPT Image**, une IA qu
 | Le dessin Flow de cet instant | **L'autorité** pour la pose, le cadrage, les jambes, les pieds |
 | La fiche modèle kirigami | L'apparence et la matière papier |
 | Un gros plan du visage | Garder le même visage partout |
-| Le dessin kirigami précédent, déjà validé | La continuité d'une image à l'autre |
+| Un détail du visage du dessin précédent, déjà contrôlé | La continuité du visage, sans imposer une autre pose |
 
-Préciser le rôle de chaque image est essentiel. Sinon, l'IA peut copier la **pose** de la fiche modèle au lieu de celle du dessin Flow.
+Préciser le rôle de chaque image est essentiel. Sinon, l'IA peut copier la **pose** de la fiche modèle au lieu de celle du dessin Flow. C'est aussi pour ça que la silhouette entière du dessin précédent ne sert **pas** de référence : l'IA risquerait de recopier sa pose.
 
 ## D'abord, la fiche modèle
 
@@ -34,13 +34,14 @@ Le même genre de chaîne avait déjà servi pour un autre projet, [Elfe](https:
 
 ## L'essai sur une foulée, puis l'arrêt
 
-Codex a commencé par les **14 premiers dessins** seulement, une foulée complète, puis il s'est arrêté. Claude a mesuré :
-- **cadrage** : l'Héroïne tombe à la place exacte du dessin Flow, à 1 pixel près ;
-- **ourlet** : du bon côté sur les 14 dessins, à 1,1° près ;
-- **pieds et jambe avant** : identiques au dessin Flow ;
-- **visage** : le même sur les 14 dessins.
+Codex a commencé par les **14 premiers dessins** seulement, une foulée complète, puis il s'est arrêté. Il avait fallu 18 générations pour obtenir ces 14 dessins : certaines ont été refaites. Les contrôles, dans le repère 720 × 1 280 :
+- **cadrage** : proche du dessin Flow, avec jusqu'à 4 pixels d'écart au sommet des cheveux et 9 pixels sur leur largeur ;
+- **ourlet** : du bon côté sur les 14 dessins, avec un écart maximal de 3,97° ;
+- **chaussures** : le bas visible diffère jusqu'à 7 pixels en hauteur ;
+- **jambe avant** : vérifiée à l'œil sur chaque dessin ;
+- **visage** : reconnaissable d'un dessin à l'autre, avec de petites variations.
 
-Un seul point faible : l'effet papier restait léger. Après une petite retouche (une raie de peau visible dans les cheveux), l'essai a été mis de côté le temps de régler le décor (chapitre 7). Une fois le décor validé, Codex a produit les **73 dessins restants**.
+Autre point faible : l'effet papier restait léger. Après une petite retouche (une raie de peau visible dans les cheveux), l'essai a été mis de côté le temps de régler le décor (chapitre 7). Une fois le décor validé (version 4), Codex a produit les **73 dessins restants**.
 
 ## La production des 87 dessins
 

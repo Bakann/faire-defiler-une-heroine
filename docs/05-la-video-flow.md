@@ -8,6 +8,8 @@ Plutôt que d'articuler un pantin, on demande à une IA vidéo de **filmer** l'H
 - une **vidéo de référence** pour le mouvement ;
 - une **image** du personnage pour l'apparence.
 
+Pour cette étape, la DA a fourni une **image modèle** du personnage : cheveux courts, chignon bas, perles. C'est elle, et non la coiffure du premier pantin, qui fixe l'apparence de l'Héroïne pour toute la suite.
+
 On lui écrit ensuite un texte (le **prompt**) : *« Applique la pose et le mouvement de la vidéo de référence à la femme de l'image de référence. »*
 
 ## Préparer la vidéo de référence
@@ -26,9 +28,9 @@ Claude a lancé la génération dans Flow, dans le navigateur de la DA, après l
 
 > *Échec : cette demande pourrait enfreindre nos règles sur la génération de personnes connues.*
 
-Le prompt ne nommait personne, et l'image du personnage était un dessin. Le problème venait de la vidéo de référence : on y voyait **le vrai visage de la mannequin**, et Flow refuse tout ce qui pourrait servir à imiter une personne réelle.
+Le prompt ne nommait personne, et l'image du personnage était un dessin. Notre hypothèse : le problème venait de la vidéo de référence, où l'on voyait **le vrai visage de la mannequin**. Flow ne détaille pas ses raisons, et un seul refus ne permet pas d'en déduire une règle générale du service.
 
-**Solution :** Claude a fabriqué une nouvelle vidéo de référence où **la tête est recouverte d'un ovale gris uni**. Le corps et la robe bougent toujours, mais personne n'est reconnaissable. Deuxième essai : **accepté**.
+**Solution :** Claude a fabriqué une nouvelle vidéo de référence où **la tête est recouverte d'un ovale gris uni**. Le corps et la robe bougent toujours, mais le visage n'apparaît plus. Deuxième essai : **accepté**. Attention : masquer un visage ne suffit pas toujours à rendre une personne impossible à reconnaître, car la silhouette, la tenue ou le contexte peuvent suffire.
 
 > **Leçon :** les IA ont des **règles de sécurité**, qui servent à protéger des personnes réelles. Quand une demande est refusée, ne cherche pas à « tromper » l'outil : cherche ce qui pose problème. Ici, masquer le visage, c'était exactement ce qu'il fallait faire : on n'avait de toute façon besoin que du mouvement.
 
@@ -38,9 +40,9 @@ La vidéo obtenue était belle : bon personnage, bonne robe, démarche croisée 
 
 ![Durée d'une foulée](../images/graphique_rythme.png)
 
-Flow faisait marcher l'Héroïne **13 % trop lentement**. Sur 8 secondes, cela fait une foulée de moins que sur le défilé.
+La foulée de Flow durait environ **13 % de plus** que celle du défilé : 1,32 s au lieu de 1,17 s. Sur 8 secondes, le retard approchait une foulée entière.
 
-**Solution sans IA :** on accélère simplement la vidéo, de 13,3 %, puis on garde un dessin sur deux, tenu deux images :
+**Solution sans IA :** on augmente simplement la vitesse de la vidéo d'environ 13 % (coefficient exact : 1,1327). Puis le filtre `fps=12` choisit 12 dessins par seconde, et `fps=24` montre chacun deux fois :
 
 ```bash
 # accélérer de 13,27 %, passer à 12 dessins par seconde, puis encoder à 24 images par seconde
@@ -49,7 +51,7 @@ ffmpeg -i flow.mp4 -vf "setpts=PTS/1.1327,fps=12,fps=24" -af "atempo=1.1327" flo
 
 Après correction, la foulée mesurée est de **1,169 s**, pour une cible de 1,167 s. Et la vidéo compte maintenant exactement **87 dessins** différents, chacun tenu deux images : 7,25 secondes.
 
-> **Leçon :** **tout ne demande pas une IA.** Accélérer une vidéo, c'est une ligne de commande, gratuite et instantanée. Regénérer la vidéo aurait coûté des crédits, avec un résultat incertain.
+> **Leçon :** **tout ne demande pas une IA.** Accélérer une vidéo, c'est une ligne de commande, gratuite et instantanée. Régénérer la vidéo aurait coûté des crédits, avec un résultat incertain.
 
 ## Ce qui n'a pas pu être corrigé
 

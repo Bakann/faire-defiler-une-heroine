@@ -4,11 +4,11 @@
 
 ## La demande
 
-Avec les 14 guides du chapitre 3, la DA a demandé à Codex un premier essai : faire défiler l'Héroïne avec la robe à aplats, image par image. Claude a écrit un brief : apparence du personnage, description précise de la robe, règles de mouvement (le pied d'appui ne glisse pas, l'ourlet bascule du côté du genou qui avance…), et un **tableau des 14 dessins** avec, pour chacun, la jambe de devant et l'angle de l'ourlet.
+Avec les 14 guides du chapitre 3, la DA a demandé à Codex un premier essai : faire défiler l'Héroïne avec la robe à aplats, image par image. Claude a écrit un brief pour fixer l'apparence et le mouvement. Il décrivait précisément la robe et les règles de mouvement : le pied d'appui ne glisse pas, l'ourlet bascule du côté du genou qui avance… Un **tableau des 14 dessins** donnait aussi, pour chacun, la jambe de devant, le contact au sol et l'angle de l'ourlet.
 
 ## Ce que Codex a fait
 
-Codex a d'abord essayé de **redessiner chaque image** avec GPT Image. Résultat : la robe raccourcissait et les pieds se décalaient d'une image à l'autre. Il a donc changé de méthode et fabriqué un **pantin articulé en 2D** : une seule tête, une seule paire de mains et de chaussures découpées dans une fiche modèle, des membres qui pivotent autour des articulations du squelette, et une robe recolorée d'après le guide.
+Codex a d'abord essayé de **redessiner chaque image** avec GPT Image. Résultat : la robe raccourcissait et les pieds se décalaient d'une image à l'autre. Il a donc changé de méthode et fabriqué un **pantin articulé en 2D**. Les membres pivotent autour des articulations du guide. La tête, les mains et les chaussures sont des pièces communes, découpées dans une fiche modèle. La robe est recolorée séparément, d'après le guide.
 
 ![Les trois versions du pantin](../images/essais_pantin.jpg)
 
@@ -28,7 +28,7 @@ Les proportions de l'Héroïne étaient enfin respectées, les bandes noires pro
 
 ![Longueur de la robe selon les versions](../images/graphique_longueur_robe.png)
 
-Pour comparer, on mesure où tombe le bas de la robe entre la hanche (0) et le genou (1). Sur le défilé : **0,82**, juste au-dessus du genou. En version 2 : **0,43**, à mi-cuisse. En version 3 : **0,83**, corrigé.
+Pour comparer, on mesure où tombe le bas de la robe entre la hanche (0) et le genou (1). Sur le défilé : environ **0,825** en moyenne, juste au-dessus du genou. En version 2 : **0,43**, à mi-cuisse. En version 3 : environ **0,825**, corrigé.
 
 ### L'erreur de Claude : la « semelle visible »
 
@@ -40,7 +40,7 @@ Autre souci : Codex dessinait les escarpins **de profil**, alors que la caméra 
 
 ## Et pourtant, la DA n'était pas satisfaite
 
-La version 3 passait **tous les contrôles**. Mais la DA a jugé que le pantin restait trop mécanique : on sentait les pièces découpées et articulées. **Décision : changer complètement de méthode** et partir d'une vraie vidéo de l'Héroïne, fabriquée par Google Flow.
+La version 3 passait **tous les contrôles chiffrés** prévus. Mais la DA a jugé que le pantin restait trop mécanique : on sentait les pièces découpées et articulées. **Décision : changer complètement de méthode** et partir d'une vraie vidéo de l'Héroïne, fabriquée par Google Flow.
 
 > **Leçon :** savoir **abandonner une piste** fait partie du travail. Les trois versions du pantin n'ont pas été inutiles : elles ont permis de fixer la description de la robe, la longueur de l'ourlet et les escarpins vus de face, qui ont servi pour la suite.
 
